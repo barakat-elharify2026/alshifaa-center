@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="booking-pag-body">
+    <header>
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">&#9776;</label>
+         <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about-us.html">من نحن</a></li>
+                <li class="dropdown">
+                    <a href="aksam.html">الأقسام الطبية</a>
+                    <input type="checkbox" id="drop-toggle"
+                     class="drop-toggle">
+                    <label for="drop-toggle" class="drop-icon">&#9662;</label> 
+
+                    <ul class="dropdown-menu">
+                        <li><a href="#">قلب</a></li>
+                        <li><a href="kids.html">أطفال</a></li>
+                        <li><a href="#">عظام</a></li>
+                        <li><a href="#">أسنان</a></li>
+                    </ul>
+                </li>
+                <li><a href="our-services.html">خدماتنا</a></li>
+                <li><a href="contact-us.html">تواصل معنا</a></li>    
+            </ul>
+         
+
+         </nav>
+        <div class="logo">
+            <img src="images/logo2.png" alt="logo">
+
+        </div>
+
+    </header>
+    <section class="booking-pag">
+        <div class="booking-container">
+            <form class="booking-form">
+                <h2>احجز موعدك</h2>
+                <input type="text" placeholder="الاسم بالكامل">
+                <input type="tel" placeholder="رقم الهاتف">
+                <input type="email" placeholder="البريد الإلكتروني">
+                <select>
+                    <option disabled selected>
+                        اختر الفرع
+                    </option>
+                    <option>فرع القاهرة</option>
+                    <option>فرع الجيزة</option>
+                    <option>فرع الإسكندرية</option>
+                
+                </select>
+                <select>
+                    <option disabled selected>
+                        اختر العيادة
+                    </option>
+                    <option>قلب</option>
+                    <option>أطفال</option>
+                    <option>عظام</option>
+                    <option>أسنان</option>
+                </select>
+                <select>
+                    <option disabled selected>
+                        اختر الطبيب
+                    </option>
+                    <option>د/ أحمد علي</option>
+                    <option>د/ علي حسن</option>
+                    <option>د/ طارق النبراشي</option>
+                    <option>د/ نجلاء سعيد</option>
+                </select>
+                <button>تأكيد الحجز</button>
+            </form>
+
+        </div>
+        
+
+    </section>
+    
+</body>
+</html> 

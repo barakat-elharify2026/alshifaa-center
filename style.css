@@ -1,0 +1,1073 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    padding-top: 90px;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background-color: white;
+    height: auto !important;
+    min-height: 100vh;
+}
+ /*  الهيدر  */
+ header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    background-color: #3b77b8;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 5px 20px;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 9999;
+}
+/* الميديا كويري للهيدر(نافبار ولوجو) */
+/* اخفاء سهم الدروب داون والتشيك بوكس ع الكمبيوتر */
+.drop-toggle, .drop-icon{
+    display: none;
+}
+@media (max-width: 768px){
+    header{
+        flex-direction: row !important;
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 60px;
+        box-sizing: border-box;
+    }
+    .menu-icon{
+        display: block;
+        cursor: pointer;
+        font-size: 28px;
+        color: white;
+        order: 1;
+    }
+    header .logo { order: 2;}
+    nav {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #3b77b8;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-heght 0.3s ease-in-out;
+
+    }
+    nav> ul{
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px 0;
+        align-items: center;
+    }
+    nav> ul> li> a{
+        color: white !important;
+    }
+    .menu-toggle:checked ~ nav{max-height: 450px;}
+    header .dropdown{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .drop-icon{
+        display: inline-block;
+        color: white;
+        font-size: 14px;
+        margin-right: 10px;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+    header .dropdown-menu{
+        display: none;
+        position: static;
+        width: 90px;
+        box-shadow: none;
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    .drop-toggle:checked ~ .dropdown-menu{
+        display: block;
+    }
+    .drop-toggle:checked ~ .drop-icon{
+        transform: rotate(180deg);
+    }
+    header .dropdown-menu li{
+        margin: 8px 0;
+    }
+}
+ 
+
+nav> ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+nav> ul> li> a{
+    text-decoration: none;
+    color: #222;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    transition: 0.3s;
+}
+nav> ul> li> a:hover{
+    color: white;
+}
+.dropdown{
+    position: relative;
+}
+.dropdown> a{
+    transition: 0.3s ease;
+}
+.dropdown:hover> a{
+    color: white;
+    
+} 
+.dropdown-menu{
+    display: none;
+    position: absolute;
+    top: 25px;
+    right: 0;
+    width: 150px;
+    background: white;
+    border-radius: 15px;
+    padding: 10px 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    opacity: 0;
+    visibility: hidden;
+    transform: 
+    translateY(18px)
+    scale(0.94);
+    transition: 
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    visibility 0.7s cubic-bezier(0.19, 1, 0.22, 1);
+    z-index: 9999;
+}
+.dropdown:hover .dropdown-menu{
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0)
+    scale(1);
+}
+.dropdown-menu li{
+    list-style: none;
+}
+.dropdown-menu li a{
+    display: block;
+    padding: 14px 20px;
+    color: #222;
+    text-decoration: none;
+    font-size: 20px;
+    transition: 0.3s ease;
+}
+.dropdown-menu li a:hover{
+    background: green;
+    color: white;
+    padding-right: 30px;
+}
+.logo{
+    display: flex;
+    align-items: center;
+    max-width: 250px;
+
+}
+.logo img{
+    width: 120px;
+    
+
+}
+
+
+
+/* الصورة والفورم */
+.hero{
+    display: flex;
+    gap: 0;
+    align-items: stretch;
+    
+    padding: 10px;
+    flex-wrap: wrap;
+}
+/*  الصورة */
+.hero-image img{
+    display: block;
+    width: 980px;
+    height: 480px;
+    border-radius: 0 20px 20px 0 ;
+}
+/* الفورم */
+.form-box{
+    width: 40px;
+    
+    min-width: 250px;
+    max-width: 500px;
+    background-color: aquamarine;
+    padding: 30px;
+    border-radius: 20px 0 0 20px;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+.form-box h2{
+    text-align: center;
+    color: darkgreen;
+    font-size: 42px;
+    margin: 5px;
+    margin-bottom: 10px ;
+}
+.form-box input{
+    width: 100%;
+    height: 55px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 0 15px;
+    margin-bottom: 15px;
+    font-size: 18px;
+    outline: none;
+    transition: 0.3s;
+}
+.form-box input:focus{
+    border-color: green;
+    box-shadow: 0 0 8px rgba(0, 128, 0, 0.2);
+}
+.form-box button{
+    width: 100%;
+    height: 60px;
+    box-sizing: border-box;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 28px;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.3s;
+}    
+.form-box button:hover{
+    background-color: darkgreen;
+    transform: scale(1.03);
+}
+.form-logo{
+    margin-top: 5px;
+}
+.form-logo img{
+    width: 100px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.about-center{
+    width: 100%;
+    padding: 50px;
+    background: #f8fbff;
+    text-align: center;
+}
+.about-center h2{
+    color: #0099cc;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.about-center p{
+    color: rgb(35, 5, 5);
+    font-size: 20px;
+    line-height: 1.9;
+}
+.footer{
+    width: 100%;
+    background: #0b1f33;
+    color: white;
+    text-align: center;
+    padding-top: 40px;
+}
+
+
+
+.footer-contact h3{
+    color: #00bfff;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+.contact-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.contact-info p{
+    margin: 0;
+    color: #ddd;
+    font-size: 18px;
+}
+.footer-bottom{
+    margin-top: 35px;
+    padding: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 15px;
+    color: #bbb;
+}
+/* الميديا كويري لصفحة الرئيسية */
+@media (max-width: 1024px){
+    html, body{
+        width: 100%;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+    .hero{
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 20px 10px;
+        width: 100% !important;
+        box-sizing: border-box !important;
+
+    }
+    .hero-image{
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+    }
+    .hero-image img{
+        width: 90% !important;
+        height: auto !important;
+        max-width: 100% !important;
+        border-radius: 20px !important;
+    }
+    .form-box{
+        width: 90% !important;
+        max-width: 400px !important;
+        margin: 20px auto !important;
+        box-sizing: border-box !important;
+    }
+    .form-box h2{
+        font-size: 26px !important;
+        margin-bottom: 15px !important;
+    }
+    .form-box input, .form-box button{
+        font-size: 16px !important;
+        height: 50px !important;
+    }
+    .contact-info{
+        gap: 15px !important;
+        justify-content: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    .contact-info p{
+        font-size: 15px !important;
+        text-align: center !important;
+    }
+    .footer{
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
+        clear: both;
+    }
+}
+/* -------------- pag2 ------------- */
+.pag2{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.pag2{
+    
+    background-image: url("/images/backgrownd.png");
+    background-size: cover;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 90px;
+    width: 100%;
+    
+    overflow-x: hidden;
+    direction: rtl;
+}
+/* صفحة الاقسام */
+.departments-page{
+    width: 90%;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3,250px);
+    gap: 15px;
+}
+/* الكارت */
+.dept-card{
+    width: 250px;
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+.dept-card:hover{
+    transform: translateY(-8px);
+}
+/* الصورة */
+.dept-card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    background: white;
+}
+/* محتوي الكارت */
+.card-content{
+    padding: 20px;
+    text-align: center;
+}
+/* عنوان القسم */
+.card-content h3{
+    font-size: 24px;
+    color: #1e3a5f;
+    margin-bottom: 12px;
+}
+/* وصف القسم */
+.card-content p{
+    color: #402222;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+/* الزر */
+.btn{
+    width: 80%;
+    margin: auto;
+    padding: 12px;
+    border: none;
+    display:inline-block;
+    text-decoration: none;
+    background: #4da6ff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 0 #2d7dcc;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 20px;
+}
+.btn:hover{
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #2d7dcc;
+}
+/* الميديا كويري لصفحة الأقسام الطبية */
+@media (max-width: 1024px){
+    body.pag2 .departments-page{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 30px !important;
+        padding: 20px 15px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    body.pag2 .dept-card{
+        width: 90% !important;
+        max-width: 450px !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+
+    }
+    body.pag2 .dept-card img{
+        width: 100% !important;
+        max-width: 250px !important;
+        height: auto !important;
+        margin-bottom: 15px !important;
+
+    }
+    body.pag2 .card-content{
+        text-align: center !important;
+        width: 100% !important;
+
+    }
+    body.pag2 .card-content h3{
+        font-size: 22px !important;
+        margin-bottom: 10px !important;
+    }
+    body.pag2 .card-content p{
+        font-size: 16px !important;
+        line-height: 1.6 !important;
+        margin-bottom: 15px !important;
+    }
+    body.pag2 .card-content .btn{
+        display: inline-block !important;
+        width: 80% !important;
+        max-width: 200px !important;
+        padding: 10px 0 !important;
+        font-size: 16px !important;
+    }
+}
+
+
+    
+
+/* صفحة قسم الأطفال */
+.kids{
+    margin: 0;
+    width: 100%;
+    padding-top: 70px;
+    direction: rtl;
+    font-family: Arial, sans-serif;
+    background-image:url("/images/pagkids.png");
+    overflow-x: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* الكونتينر */
+.container{
+    display: flex;
+    padding-top: 40px !important;
+    padding-bottom: 20px !important;
+
+}
+.title{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 45px;
+    color: #163b72;
+    position: relative;
+    margin-left: 30%;
+    margin-top: 0;
+    padding-bottom: 10px;
+}
+/* الجريد الذكي ريسبونسف */
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 370px);
+    justify-content: flex-start;
+    gap: 30px 30px;
+    margin-top: -30px !important;
+    margin-bottom: -30px;
+    margin-left: 400px;
+
+}
+/* كارت الدكتور */
+.doctor{
+    background: white;
+    align-items: center; 
+    width: 350px;
+    height: 400px;
+    border-radius: 25px;
+    padding: 10px;
+    
+    display: block;
+    text-align: center;
+    
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+    transition: 0.4s ease;
+}
+/* حركة خفيفة */
+.doctor:hover{
+    transform: translateY(-8px);
+}
+/* الصورة */
+.doctor img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+    background: #dfe9f7;
+    flex-shrink: 0;
+
+}
+.doctor-info{
+    text-align: center;
+    
+    
+}
+/* اسم الدكتور */
+.doctor h3{
+    margin-bottom: 10px;
+    padding-top: 10px;
+    font-size: 24px;
+    color: #0d6efd;
+    white-space: nowrap;
+    
+}
+/* التخصص */
+.doctor p{
+    margin-bottom: 20px;
+    font-size: 20px;
+    color:#350707;
+    white-space: nowrap;
+}
+/* زر الحجز */
+.btn-box{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10%;
+    
+}
+.big-btn{
+    width: 50%;
+    padding: 22px;
+    font-size: 35px;
+    border: none;
+    border-radius: 18px;
+    background: linear-gradient(to right , #6bbcff , #4da6ff);
+    color: white;
+    box-shadow: 0 8px 0 #2d7dcc;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-left: 470px;
+}
+/* تأثير الضغط ع الزر */
+.big-btn:active{
+    transform: translateY(5px);
+    box-shadow: 0 3px 0 #2d7dcc;
+}
+.big-btn:hover{
+    background: linear-gradient(to right , #3b82f6 , #2563eb);
+}
+/* الميديا كويري لصفحة قسم الأطفال*/
+@media (max-width: 767px){
+    section.container,
+    .kids .container{
+        display: block;
+        padding-top: 5px;
+        padding-bottom: 20px;
+        margin-top: 0 !important;
+    }
+    .kids .title{
+        display: block;
+        font-size: 28px;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 0px;
+        margin-bottom: 60px;
+        text-align: center;
+        position: relative;
+    }
+    .kids .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-content: center;
+        margin: 30px 0 0 0;
+        justify-items: center;
+    
+        gap: 25px;
+    }
+    .kids .doctor{
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        padding-bottom: 15px;
+        margin: 0 auto;
+
+    }
+    .kids .doctor img{
+        height: 250px;
+    }
+    .kids .btn-box{
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        width: 100%;
+        text-align: center;
+        clear: both;
+    }
+    .kids .big-btn{
+        width: 80%;
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 12px 0;
+        font-size: 24px;
+        display: inline-block;
+        float: none;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px){
+    section.container,
+    .kids .container{
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    .kids .title{
+        display: block;
+        font-size: 32px;
+        text-align: center;
+        width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    .kids .grid{
+        margin-top: 30px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 10px;
+        justify-content: center;
+
+    }
+    .kids .doctor{
+        height: auto;
+        padding-bottom: 15px;
+        margin: 0 auto;
+    }
+    .kids .doctor img{
+        height: 260px;
+    }
+    .kids .btn-box{
+        margin-left: 0;
+        margin-right: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .kids .big-btn{
+        width: 40%;
+        max-width: 350px;
+        margin: 15px auto 0 auto;
+        float: none;
+        display: inline-block;
+    }
+}
+
+     
+  
+/* صفحة من نحن ---- about us */
+
+/* صفحة خدماتنا -----our-services */
+.services-hero{
+    min-height: 85vh;
+    background-image: url(/images/b-g-booking.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero-overlay{
+    width: 100%;
+    height: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: left;
+    color: blue;
+    padding-left: 8%;
+    padding-right: 45%;
+}
+.hero-overlay h1{
+    font-size: 55px;
+    margin-bottom: 20px;
+}
+.hero-overlay p{
+    max-width: 700px;
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 50px;
+}
+.features{
+    display: flex;
+    gap: 60px;
+}
+.feature{
+    text-align: center;
+
+}
+.feature img{
+    width: 65px;
+    height: 65px;
+    margin-bottom: 15px;
+    
+
+}
+.feature h3{
+    font-size: 20px;
+    
+}
+@media (max-width: 768px){
+    .hero-overlay h1{
+        font-size: 38px;
+    }
+    .hero-overlay p{
+        font-size: 16px;
+
+    }
+    .features{
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+    
+
+/* -----------------------صفحة الحجز-------------------- */
+.booking-pag-body{
+    background: white;
+}
+.booking-pag{
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 20px 80px;
+    background-image: url("/images/b-g-booking.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.booking-container{
+    
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-left: 50px;
+}
+.booking-form{
+    width: 100%;
+    max-width: 500px;
+    background: rgb(139, 139, 181);
+    padding: 40px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-shadow: 0 10 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+}
+.booking-form h2{
+    text-align: center;
+    font-size: 35px;
+    color: rgb(17, 17, 168);
+    margin-bottom: 10px;
+}
+.booking-form input,
+.booking-form select{
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dcdcdc;
+    border-radius: 12px;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.booking-form input:focus,
+.booking-form select:focus{
+    border-color: #0097b2;
+    box-shadow: 0 0 10px rgba(0, 151, 178, 0.2);
+}
+.booking-form button{
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: green;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.booking-form button:hover{
+    background: darkgreen;
+    transform: translateY(-3px);
+}
+@media(max-width:768px){
+    .booking-container{
+        justify-content: center;
+        padding-left: 0;
+    }
+    .booking-form{
+        max-width: 100%;
+    }
+}
+/* ----------------صفحة تواصل معنا ------------ */
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 30px 20px;
+}
+/* الكارت */
+.card{
+    background: white;
+    width: 280px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+    transition: 0.3s;
+}
+.card:hover{
+    transform: translateY(-8px);
+}
+.card h2{
+    color: #1b6ca8;
+}
+/* الخريطة */
+.map-box{
+    width: 100%;
+    height: 300px;
+    border-radius: 15px;
+    overflow: hidden;
+    margin: 12px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    border: 1px solid #d6e6f2;
+}
+.map-box img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.3s;
+}
+.map-box:hover img{
+    transform: scale(1.05);
+}
+/* لوجو الواتس */
+.whatsapp-icon{
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: 12px auto;
+}
+/* زر الواتساب */
+.btn{
+    display: inline-block;
+    padding: 12px 20px;
+    background: #25d366;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn:hover{
+    background: #1ebe5d;
+    transform: scale(1.05);
+}
+/* ----------------تجاوب التابلت------------- */
+@media (min-width: 768px) and (max-width: 1024px){
+    .card{
+        width: 45%;
+    }
+}
+/* ----------موبايل------------------- */
+@media (max-width: 767px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 90%;
+    }
+    .map-box{
+        height: 200px;
+    }
+    .btn{
+        width: 100%;
+    }
+}
+.contact-section{
+    width: 100%;
+    padding: 45px 0;
+    background: #f5f7fa;
+}
+.contact-section> h2, h3{
+    text-align: center;
+    color: blue;
+    margin-bottom: 20px;
+}
+/* العنوان الرئيسي */
+.min-title{
+    text-align: center;
+    font-size: 34px;
+    margin: 0;
+    color: #0a62b9;
+}
+/* عنوان الفروع */
+.branches-title{
+    text-align: center;
+    margin: 10px 0 30px;
+    font-size: 22px;
+    color: #0077b6;
+}
+/* الشريط */
+.contact-strip{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    background: #0f2a3d;
+    color: white;
+    padding: 30px 15px;
+    flex-wrap: wrap;
+}
+/* كل فرع */
+.contact-item{
+    text-align: center;
+    flex: 1;
+    min-width: 260px;
+    padding: 10px;
+}
+
+.contact-item h3{
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #00b4d8;
+}
+.contact-item p{
+    margin: 4px 0;
+    font-size: 15px;
+    opacity: 0.9;
+}
+/* تابلت */
+@media (max-width: 992px){
+    .contact-item{
+        flex: 0 0 45px;
+    }
+    .contact-strip{
+        justify-content: center;
+        gap: 20px;
+    }
+}
+/* موبايل */
+@media (max-width: 600px){
+    .min-title{
+        font-size: 26px;
+    }
+    .branches-title{
+        font-size: 18px;
+    }
+    .contact-item{
+        flex: 0 0 100%;
+    }
+    .contact-strip{
+        padding: 20px 10px;
+    }
+}
+
+
+
+
+    
+
+
+
+
+
+
