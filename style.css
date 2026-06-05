@@ -387,7 +387,7 @@ nav> ul> li> a:hover{
 }
 .pag2{
     
-    background-image: url("/images/backgrownd.png");
+    background-image: url("images/backgrownd.png");
     background-size: cover;
     margin: 0;
     font-family: Arial, sans-serif;
@@ -526,7 +526,7 @@ nav> ul> li> a:hover{
     padding-top: 70px;
     direction: rtl;
     font-family: Arial, sans-serif;
-    background-image:url("/images/pagkids.png");
+    background-image:url("images/pagkids.png");
     overflow-x: hidden;
     background-position: center;
     background-repeat: no-repeat;
@@ -752,7 +752,7 @@ nav> ul> li> a:hover{
 /* صفحة خدماتنا -----our-services */
 .services-hero{
     min-height: 85vh;
-    background-image: url(/images/b-g-booking.png);
+    background-image: url(images/b-g-booking.png);
     background-position: center;
     background-size: cover;
     position: relative;
@@ -825,7 +825,7 @@ nav> ul> li> a:hover{
     width: 100%;
     min-height: 100vh;
     padding: 50px 20px 80px;
-    background-image: url("/images/b-g-booking.png");
+    background-image: url("images/b-g-booking.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
