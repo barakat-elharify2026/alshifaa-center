@@ -59,7 +59,7 @@ body{
         background-color: #3b77b8;
         max-height: 0;
         overflow: hidden;
-        transition: max-heght 0.3s ease-in-out;
+        transition: max-height 0.3s ease-in-out;
 
     }
     nav> ul{
