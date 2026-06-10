@@ -56,11 +56,11 @@ body{
     header .logo { order: 2;}
     nav {
         position: fixed;
-        top: 0px;
+        
         right: -100%;
         width: 50%;
         background-color: #3b77b8;
-        height: 100vh;
+        height: auto;
         overflow: visible;
         transition: right 0.4s ease-in-out;
         z-index:999;
@@ -87,7 +87,7 @@ body{
     .drop-icon{
         display: inline-block;
         color: white;
-        font-size: 14px;
+        font-size: 20px;
         margin-right: 10px;
         cursor: pointer;
         padding: 5px 10px;
