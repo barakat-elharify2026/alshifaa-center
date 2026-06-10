@@ -52,14 +52,15 @@ body{
     }
     header .logo { order: 2;}
     nav {
-        position: absolute;
-        top: 60px;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0px;
+        right: -60;
+        width: 50%;
         background-color: #3b77b8;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
+        height: 100vh;
+        overflow: visible;
+        transition: right 0.4s ease-in-out;
+        z-index:999;
 
     }
     nav> ul{
@@ -71,7 +72,7 @@ body{
     nav> ul> li> a{
         color: white !important;
     }
-    .menu-toggle:checked ~ nav{max-height: 800px;}
+    .menu-toggle:checked ~ nav{right: 0;}
     header .dropdown{
         display: flex;
         align-items: center;
@@ -89,12 +90,14 @@ body{
     }
     header .dropdown-menu{
         display: none;
-        position: static;
-        width: 90px;
+        position: absolute;
+        top: 15%;
+        right: 100%;
+        width: 120px;
         box-shadow: none;
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: #2e5f94;
         border-radius: 5px;
-        margin-top: 10px;
+        z-index:1000;
     }
     .drop-toggle:checked ~ .dropdown-menu{
         display: block;
