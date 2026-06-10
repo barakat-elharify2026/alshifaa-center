@@ -54,7 +54,7 @@ body{
     nav {
         position: fixed;
         top: 0px;
-        right: -60;
+        right: -100%;
         width: 50%;
         background-color: #3b77b8;
         height: 100vh;
