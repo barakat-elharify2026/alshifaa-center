@@ -71,7 +71,7 @@ body{
     nav> ul> li> a{
         color: white !important;
     }
-    .menu-toggle:checked ~ nav{max-height: 450px;}
+    .menu-toggle:checked ~ nav{max-height: 800px;}
     header .dropdown{
         display: flex;
         align-items: center;
