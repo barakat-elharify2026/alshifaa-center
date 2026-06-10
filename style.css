@@ -35,9 +35,7 @@ body{
     display: none;
 }
 @media (max-width: 768px){
-    *{
-        over flow: visible!important;
-    }   
+       
     header{
         flex-direction: row !important;
         justify-content: space-between;
@@ -90,6 +88,8 @@ body{
         padding: 5px 10px;
     }
     header .dropdown-menu{
+        max-height:60vh;
+        overflow-y:auto;
         display: none;
         position: static;
         width: 90px;
