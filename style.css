@@ -38,6 +38,7 @@ body{
     html, body{
         margin: o !important;
         padding: 0 !important;
+    }
        
     header{
         position: relative;
@@ -56,7 +57,8 @@ body{
     header .logo { order: 2;}
     nav {
         position: fixed;
-        
+        top: 60px;
+        height: calc(100vh - 60px)
         right: -100%;
         width: 50%;
         background-color: #3b77b8;
