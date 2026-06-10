@@ -35,6 +35,9 @@ body{
     display: none;
 }
 @media (max-width: 768px){
+    *{
+        over flow: visible!important;
+    }   
     header{
         flex-direction: row !important;
         justify-content: space-between;
