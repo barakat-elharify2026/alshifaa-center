@@ -37,13 +37,18 @@ body{
 
 
 @media 
+@media
 @media (max-width: 768px) {
-    /* تصفير الهوامش الأساسية ونزول محتوى الموقع تحت الهيدر */
+    /* 1️⃣ تصفير الهوامش ونزول المحتوى تحت الهيدر */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
     body {
         padding-top: 60px !important;
     }
 
-    /* الهيدر الثابت */
+    /* 2️⃣ الهيدر الثابت ولونه الأزرق */
     header {
         position: fixed !important;
         top: 0 !important;
@@ -54,7 +59,13 @@ body{
         z-index: 9999 !important;
     }
 
-    /* زرار الـ 3 شرط واللوجو ثابين فوق */
+    /* 3️⃣ إخفاء المربعات البيضاء (Checkboxes) تماماً وبشكل صريح */
+    input[type="checkbox"].menu-toggle,
+    input[type="checkbox"].drop-toggle {
+        display: none !important;
+    }
+
+    /* 4️⃣ زرار الـ 3 شرط على اليمين واللوجو على الشمال */
     .menu-icon {
         display: block !important;
         position: absolute !important;
@@ -65,7 +76,6 @@ body{
         cursor: pointer !important;
         z-index: 10001 !important;
     }
-
     .logo {
         position: absolute !important;
         left: 20px !important;
@@ -77,36 +87,34 @@ body{
         width: auto !important;
     }
 
+    /* 5️⃣ القائمة الكبيرة (nav): بتفتح من اليمين واخدة نص الشاشة */
     nav {
-        position: relative !important;
-        width: 100% !important;
-        height: 100% !important;
-        max-height: none !important;
-    }
-
-    /* القائمة الكبيرة اللي بتسحب من اليمين */
-    nav ul {
         position: fixed !important;
         top: 60px !important;
         right: -100% !important;
         width: 50% !important;
         height: calc(100vh - 60px) !important;
         background-color: #3b77b8 !important;
+        z-index: 9998 !important;
+        transition: right 0.3s ease-in-out !important;
+    }
+    .menu-toggle:checked ~ nav {
+        right: 0 !important;
+    }
+
+    /* تنسيق اللينكات جوة القائمة الكبيرة */
+    nav ul {
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
         padding: 20px !important;
         margin: 0 !important;
         list-style: none !important;
-        z-index: 9998 !important;
-        transition: right 0.4s ease-in-out !important;
-        overflow-y: auto !important;
     }
-
     nav ul li {
         width: 100% !important;
-        margin-bottom: 15px !important;
-        position: relative !important;
+        margin-bottom: 20px !important;
+        position: relative !important; /* مهم جداً عشان القائمة الفرعية تفتح بالنسبة له */
     }
     nav ul li a {
         color: white !important;
@@ -115,59 +123,41 @@ body{
         display: inline-block !important;
     }
 
-    .menu-toggle:checked ~ nav ul {
-        right: 0 !important;
-    }
-
-    /* 🏹 السهم الأبيض الصغير: بيفضل جنب كلمة الأقسام الطبية */
-    .dropdown {
-        display: flex !important;
-        align-items: center !important;
-        flex-wrap: wrap !important;
-    }
-    
+    /* 6️⃣ السهم الأبيض الصغير: بنرجعه يظهر بشكل نضيف جنب الكلمة */
     .drop-icon {
         display: inline-block !important;
-        color: #ffffff !important;
+        color: white !important;
         font-size: 14px !important;
         margin-right: 8px !important;
         cursor: pointer !important;
     }
 
-    /* 👈 القائمة الفرعية (الأقسام الطبية): بتفتح جنب القائمة الكبيرة على الشمال برة حدودها */
+    /* 7️⃣ القائمة الفرعية (الأقسام الطبية): تفتح جنب القائمة الكبيرة على الشمال بالملي */
     header .dropdown-menu {
         display: none !important;
-        position: fixed !important; /* بنخليها ثابتة بالنسبة للشاشة عشان تخرج برة */
-        top: 180px !important; /* بتنزل تحت شوية عشان تيجي قصاد كلمة الأقسام بالظبط */
-        right: 50% !important; /* بتبدأ فوراً من نهاية القائمة الكبيرة (اللي واخدة 50% من اليمين) */
-        width: 140px !important; /* عرض مناسب للأقسام */
-        background-color: #2e5f94 !important; /* لون أغمق مميز */
-        border-radius: 5px 0 0 5px !important; /* انحناء من جهة الشمال بس */
+        position: absolute !important;
+        top: 0 !important;
+        right: 100% !important; /* بتحدف نفسها برة الـ nav على الشمال فوراً */
+        width: 130px !important;
+        background-color: #2e5f94 !important;
+        border-radius: 5px !important;
         list-style: none !important;
         padding: 10px !important;
+        margin: 0 !important;
         z-index: 10000 !important;
-        box-shadow: -5px 5px 10px rgba(0,0,0,0.2) !important;
     }
-    
     header .dropdown-menu li {
         margin-bottom: 10px !important;
-        width: 100% !important;
     }
     header .dropdown-menu li a {
         font-size: 16px !important;
-        display: block !important;
     }
 
-    /* تأثير الفتح: تظهر على الشمال لما تدوس على السهم */
+    /* فتح القائمة الفرعية عند الضغط على السهم */
     .drop-toggle:checked ~ .dropdown-menu {
         display: block !important;
     }
-
-    /* إخفاء مربعات التشيك بوكس */
-    .menu-toggle, .drop-toggle {
-        display: none !important;
-    }
-}
+        }
 
 
 
