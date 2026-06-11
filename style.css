@@ -36,8 +36,9 @@ body{
 }
 
 
+@media 
 @media (max-width: 768px) {
-    /* بننزل محتوى الموقع كله تحت الهيدر عشان مشكلة المارجين تفضل محلولة */
+    /* تصفير الهوامش الأساسية ونزول محتوى الموقع تحت الهيدر */
     body {
         padding-top: 60px !important;
     }
@@ -53,7 +54,7 @@ body{
         z-index: 9999 !important;
     }
 
-    /* الأيقونات واللوجو */
+    /* زرار الـ 3 شرط واللوجو ثابين فوق */
     .menu-icon {
         display: block !important;
         position: absolute !important;
@@ -83,7 +84,7 @@ body{
         max-height: none !important;
     }
 
-    /* 📌 القائمة الزرقاء: زودنا overflow-y عشان لو اللينكات كتيرة تسكرول وما تختفيش */
+    /* القائمة الكبيرة اللي بتسحب من اليمين */
     nav ul {
         position: fixed !important;
         top: 60px !important;
@@ -99,7 +100,7 @@ body{
         list-style: none !important;
         z-index: 9998 !important;
         transition: right 0.4s ease-in-out !important;
-        overflow-y: auto !important; /* 🔥 ده اللي هيظهر (خدماتنا وتواصل معنا) */
+        overflow-y: auto !important;
     }
 
     nav ul li {
@@ -118,45 +119,51 @@ body{
         right: 0 !important;
     }
 
-    /* 🏹 السهم الأبيض الصغير: بنخليه يظهر تحت الكلمة مباشرة وبشكل واضح */
-    .dropdown > a {
-        display: block !important;
+    /* 🏹 السهم الأبيض الصغير: بيفضل جنب كلمة الأقسام الطبية */
+    .dropdown {
+        display: flex !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
     }
     
-    label[for="drop-toggle"] {
-        display: block !important;
-        color: #ffffff !important; /* أبيض صريح */
+    .drop-icon {
+        display: inline-block !important;
+        color: #ffffff !important;
         font-size: 14px !important;
+        margin-right: 8px !important;
         cursor: pointer !important;
-        margin-top: 5px !important; /* تحت الكلمة مباشرة */
-        text-align: center !important;
-        width: fit-content !important;
     }
 
-    /* القائمة الفرعية للأقسام */
+    /* 👈 القائمة الفرعية (الأقسام الطبية): بتفتح جنب القائمة الكبيرة على الشمال برة حدودها */
     header .dropdown-menu {
         display: none !important;
-        position: static !important; /* بتفتح تحت السهم علطول جوة المنيو */
-        width: 100% !important;
-        background-color: #2e5f94 !important;
-        border-radius: 5px !important;
+        position: fixed !important; /* بنخليها ثابتة بالنسبة للشاشة عشان تخرج برة */
+        top: 180px !important; /* بتنزل تحت شوية عشان تيجي قصاد كلمة الأقسام بالظبط */
+        right: 50% !important; /* بتبدأ فوراً من نهاية القائمة الكبيرة (اللي واخدة 50% من اليمين) */
+        width: 140px !important; /* عرض مناسب للأقسام */
+        background-color: #2e5f94 !important; /* لون أغمق مميز */
+        border-radius: 5px 0 0 5px !important; /* انحناء من جهة الشمال بس */
         list-style: none !important;
         padding: 10px !important;
-        margin-top: 5px !important;
+        z-index: 10000 !important;
+        box-shadow: -5px 5px 10px rgba(0,0,0,0.2) !important;
     }
+    
     header .dropdown-menu li {
-        margin-bottom: 8px !important;
+        margin-bottom: 10px !important;
+        width: 100% !important;
     }
     header .dropdown-menu li a {
         font-size: 16px !important;
+        display: block !important;
     }
 
-    /* فتح الأقسام */
+    /* تأثير الفتح: تظهر على الشمال لما تدوس على السهم */
     .drop-toggle:checked ~ .dropdown-menu {
         display: block !important;
     }
 
-    /* إخفاء مربعات التشيك بوكس القبيحة */
+    /* إخفاء مربعات التشيك بوكس */
     .menu-toggle, .drop-toggle {
         display: none !important;
     }
