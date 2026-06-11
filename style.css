@@ -35,19 +35,23 @@ body{
     display: none;
 }
 
+@medi
 @media (max-width: 768px) {
-    /* تصفير الهوامش الأساسية */
-    html, body {
-        margin: 0 !important;
-        padding: 0 !important;
+    /* 1️⃣ حل مشكلة الجزء المستخبي: بنزّل محتوى الصفحة كله 60px تحت الهيدر */
+    body {
+        padding-top: 60px !important;
     }
 
-    /* 🛠️ حل مشكلة الجزء المختفي: بنجبر أول عنصر بعد الهيدر ينزل تحت بمقدار 60px */
-    header + * {
-        margin-top: 60px !important;
+    /* 2️⃣ إظهار السهم الأبيض الصغير وتنسيقه جنب الأقسام الطبية */
+    .drop-icon {
+        display: inline-block !important;
+        color: #ffffff !important; /* لون أبيض صريح */
+        font-size: 14px !important;
+        margin-right: 8px !important; /* مسافة بين الكلمة والسهم */
+        cursor: pointer !important;
     }
 
-    /* الهيدر الثابت في السقف ولونه أزرق */
+    /* الهيدر الثابت في السقف */
     header {
         position: fixed !important;
         top: 0 !important;
@@ -56,15 +60,9 @@ body{
         height: 60px !important;
         background-color: #3b77b8 !important;
         z-index: 9999 !important;
-        overflow: visible !important;
     }
 
-    /* إخفاء الـ Checkboxes تماماً عشان ما تظهرش كمربعات بيضاء */
-    .menu-toggle, .drop-toggle {
-        display: none !important;
-    }
-
-    /* أيقونة الـ 3 شرط على اليمين فوق */
+    /* زرار الـ 3 شرط على اليمين */
     .menu-icon {
         display: block !important;
         position: absolute !important;
@@ -76,7 +74,7 @@ body{
         z-index: 10001 !important;
     }
 
-    /* اللوجو مسمار على الشمال فوق */
+    /* اللوجو على الشمال */
     .logo {
         position: absolute !important;
         left: 20px !important;
@@ -88,7 +86,7 @@ body{
         width: auto !important;
     }
 
-    /* الـ nav كحاوية شفافة */
+    /* حاوية المنيو الشفافة */
     nav {
         position: relative !important;
         width: 100% !important;
@@ -96,7 +94,7 @@ body{
         max-height: none !important;
     }
 
-    /* قائمة اللينكات اللي بتسحب من اليمين */
+    /* القائمة الزرقاء اللي بتفتح وتقفل */
     nav ul {
         position: fixed !important;
         top: 60px !important;
@@ -117,7 +115,6 @@ body{
     nav ul li {
         width: 100% !important;
         margin-bottom: 20px !important;
-        position: relative !important; /* عشان نثبت جنبها السهم */
     }
     nav ul li a {
         color: white !important;
@@ -126,32 +123,17 @@ body{
         display: inline-block !important;
     }
 
-    /* ظهور المنيو الكبيرة عند الضغط على الـ 3 شرط */
+    /* تأثير الفتح بالـ 3 شرط */
     .menu-toggle:checked ~ nav ul {
         right: 0 !important;
     }
 
-    /* 🏹 إظهار السهم الصغير (الـ label) جنب كلمة الأقسام الطبية */
-    .drop-icon {
-        display: inline-block !important;
-        color: white !important;
-        font-size: 16px !important;
-        margin-right: 8px !important; /* مسافة بين الكلمة والسهم */
-        cursor: pointer !important;
-        transition: transform 0.3s !important;
-    }
-
-    /* حركة اختيارية: السهم يلف تحت لما تفتح القائمة */
-    .drop-toggle:checked ~ .drop-icon {
-        transform: rotate(180deg) !important;
-    }
-
-    /* القائمة المنسدلة الفرعية (الأقسام الطبية) */
+    /* القائمة الفرعية للأقسام */
     header .dropdown-menu {
         display: none !important;
         position: absolute !important;
         top: 0 !important;
-        right: 100% !important; /* بتفتح على شمال المنيو الكبيرة */
+        right: 100% !important;
         width: 130px !important;
         background-color: #2e5f94 !important;
         border-radius: 5px !important;
@@ -159,15 +141,18 @@ body{
         padding: 10px !important;
         z-index: 10000 !important;
     }
-    header .dropdown-menu li {
-        margin-bottom: 10px !important;
-    }
 
-    /* ظهور الأقسام عند الضغط على السهم */
+    /* فتح الأقسام عند الضغط على السهم */
     .drop-toggle:checked ~ .dropdown-menu {
         display: block !important;
     }
+
+    /* إخفاء مربعات الاختيار */
+    .menu-toggle, .drop-toggle {
+        display: none !important;
+    }
 }
+
 
 
 
