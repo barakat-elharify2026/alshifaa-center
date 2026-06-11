@@ -34,55 +34,120 @@ body{
 .drop-toggle, .drop-icon{
     display: none;
 }
-@media 
+
 @media (max-width: 768px) {
-    /* بنثبت شريط الهيدر كله في سقف الشاشة عشان ما يتحركش مع السكرول */
+    /* تصفير الهوامش عشان الفراغ اللي فوق يقفل تماماً */
+    html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    /* الهيدر: شريط ثابت في سقف الشاشة ولونه أزرق */
     header {
         position: fixed !important;
         top: 0 !important;
         left: 0 !important;
         width: 100% !important;
         height: 60px !important;
+        background-color: #3b77b8 !important;
         z-index: 9999 !important;
         overflow: visible !important;
     }
 
-    /* القائمة الكبيرة: مستخبية برة الشاشة تماماً جهة اليمين */
-    nav {
-        position: fixed !important; 
-        top: 60px !important; /* بتبدأ من تحت شريط الهيدر علطول */
-        right: -100% !important; /* مخفية تماماً ومش هتظهر لوحدها */
-        width: 50% !important; 
-        height: calc(100vh - 60px) !important; 
-        background-color: #3b77b8 !important;
-        z-index: 9998 !important; 
-        transition: right 0.4s ease-in-out !important; 
-        overflow: visible !important; 
-        padding-top: 10px !important; 
-    }
-
-    /* حركة الفتح: بنستخدم الكلاس بتاعك المظبوط اللي في الـ HTML */
-    .menu-toggle:checked ~ nav {
-        right: 0 !important; /* القائمة بتسحب وتظهر لما تدوس على الـ 3 شرط */
-    }
-
-    /* القائمة المنسدلة (الأقسام): بتطلع برة على الشمال ونضيفة */
-    header .dropdown-menu {
-        display: none !important;
+    /* زرار الـ 3 شرط: بيفضل مكانه فوق البار على اليمين */
+    .menu-icon {
+        display: block !important;
         position: absolute !important;
-        top: 0 !important; 
-        right: 100% !important; 
-        width: 130px !important; 
-        background-color: #2e5f94 !important; 
-        border-radius: 5px !important;
+        right: 20px !important;
+        top: 12px !important;
+        font-size: 28px !important;
+        color: white !important;
+        cursor: pointer !important;
         z-index: 10001 !important;
     }
 
-    /* بتظهر فوراً لما تدوس على سهم الأقسام */
+    /* اللوجو: بيفضل ثابت في البار على الشمال ومستحيل يختفي أو يتحرك */
+    .logo {
+        position: absolute !important;
+        left: 20px !important;
+        top: 8px !important;
+        z-index: 10001 !important;
+    }
+    .logo img {
+        height: 45px !important;
+        width: auto !important;
+    }
+
+    /* الـ nav نفسه بنخليه بار شفاف بنفس مساحة الهيدر عشان يثبت العناصر */
+    nav {
+        position: relative !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-height: none !important;
+    }
+
+    /* 📌 اللينكات (ul): هي دي اللي بتتحول لقائمة وتختفي وتظهر من الجنب اليمين */
+    nav ul {
+        position: fixed !important;
+        top: 60px !important; /* بتبدأ من تحت الهيدر علطول عشان تقفل الفراغ */
+        right: -100% !important; /* مستخبية برة الشاشة تماماً على اليمين */
+        width: 50% !important; /* واخدة نص الشاشة بالعرض */
+        height: calc(100vh - 60px) !important; /* واخدة باقي طول الشاشة */
+        background-color: #3b77b8 !important; /* لون القائمة الزرقاء */
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 20px !important;
+        margin: 0 !important;
+        list-style: none !important;
+        z-index: 9998 !important;
+        transition: right 0.4s ease-in-out !important; /* حركة السحب الناعمة */
+    }
+
+    nav ul li {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+    nav ul li a {
+        color: white !important;
+        text-decoration: none !important;
+        font-size: 18px !important;
+        display: block !important;
+    }
+
+    /* ⚡ تأثير السحب: لما تدوس على الـ 3 شرط، اللينكات (ul) بس هي اللي بتدخل الشاشة */
+    .menu-toggle:checked ~ nav ul {
+        right: 0 !important;
+    }
+
+    /* القائمة المنسدلة (الأقسام الطبية): بتطلع برة على الشمال */
+    header .dropdown-menu {
+        display: none !important;
+        position: absolute !important;
+        top: 0 !important;
+        right: 100% !important; /* بتحدف نفسها على شمال قائمة اللينكات */
+        width: 130px !important;
+        background-color: #2e5f94 !important;
+        border-radius: 5px !important;
+        list-style: none !important;
+        padding: 10px !important;
+        z-index: 10000 !important;
+    }
+    header .dropdown-menu li {
+        margin-bottom: 10px !important;
+    }
+
+    /* تظهر الأقسام فوراً لما تدوس على سهم الأقسام */
     .drop-toggle:checked ~ .dropdown-menu {
         display: block !important;
     }
+
+    .menu-toggle, .drop-toggle {
+        display: none !important;
+    }
 }
+
+
 
 
  
