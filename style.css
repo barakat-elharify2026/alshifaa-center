@@ -92,7 +92,7 @@ body{
         top: 60px !important;
         right: -100% !important;
         width: 50% !important;
-        height: calc(100vh - 60px) !important;
+        height: auto !important;
         background-color: #3b77b8 !important;
         display: flex !important;
         flex-direction: column !important;
