@@ -128,7 +128,7 @@ body{
     
     label[for="drop-toggle"] {
         display: block !important;
-        color: #ffffff !important; /* أبيض صريح */
+        color: black !important; /* أبيض صريح */
         font-size: 14px !important;
         cursor: pointer !important;
         margin-top: 5px !important; /* تحت الكلمة مباشرة */
