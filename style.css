@@ -111,7 +111,7 @@ body{
         position: relative !important;
     }
     nav ul li a {
-        color: white !important;
+        color: black !important;
         text-decoration: none !important;
         font-size: 18px !important;
         display: inline-block !important;
