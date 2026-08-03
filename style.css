@@ -97,7 +97,7 @@ body{
         display: flex !important;
         flex-direction: column !important;
         align-items: flex-start !important;
-        padding: 20px !important;
+        padding: 5px !important;
         margin: 0 !important;
         list-style: none !important;
         z-index: 9998 !important;
