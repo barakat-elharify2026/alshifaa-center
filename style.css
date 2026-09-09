@@ -115,6 +115,8 @@ body{
         text-decoration: none !important;
         font-size: 18px !important;
         display: inline-block !important;
+        padding: 5px;
+        
     }
 
     .menu-toggle:checked ~ nav ul {
@@ -123,7 +125,7 @@ body{
 
     /* 🏹 السهم الأبيض الصغير: بنخليه يظهر تحت الكلمة مباشرة وبشكل واضح */
     .dropdown > a {
-        display: block !important;
+        display: flex !important;
     }
     
     label[for="drop-toggle"] {
