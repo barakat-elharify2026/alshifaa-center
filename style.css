@@ -90,6 +90,7 @@ body{
     nav ul {
         position: fixed !important;
         top: 60px !important;
+        gap:20px;
         right: -100% !important;
         width: 50% !important;
         height: auto !important;
