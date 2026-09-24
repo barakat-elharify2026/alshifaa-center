@@ -88,22 +88,7 @@ body{
 
     /* 📌 القائمة الزرقاء: زودنا overflow-y عشان لو اللينكات كتيرة تسكرول وما تختفيش */
     nav ul {
-        position: fixed !important;
-        top: 60px !important;
-        gap:20px;
-        right: -100% !important;
-        width: 50% !important;
-        height: auto !important;
-        background-color: white !important;
-        display: flex !important;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        padding: 10px !important;
-        margin: 0 !important;
-        list-style: none !important;
-        z-index: 9998 !important;
-        transition: right 0.4s ease-in-out !important;
-        overflow-y: auto !important; /* 🔥 ده اللي هيظهر (خدماتنا وتواصل معنا) */
+        
     }
 
     nav ul li {
