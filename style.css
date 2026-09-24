@@ -112,14 +112,18 @@ body{
         margin-bottom: 2px !important;
         position: relative !important;
     }
-    nav ul li a {
-        color: black !important;
-        text-decoration: none !important;
-        font-size: 18px !important;
-        display: inline-block !important;
-        padding: 5px;
-        
-    }
+    nav ul li {
+    margin: 0 !important; /* إلغاء أي هوامش افتراضية تتسبب في وسع المسافات */
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+nav ul li a {
+    display: block !important;
+    padding: 8px 10px !important; /* يعطي مساحة ضغط مريحة للمستخدم وشكل أنيق دون أخذ مساحة ضخمة */
+    margin: 0 !important;
+}
+    
 
     .menu-toggle:checked ~ nav ul {
         right: 0 !important;
