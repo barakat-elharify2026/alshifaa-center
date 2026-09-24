@@ -87,9 +87,25 @@ body{
     }
 
     /* 📌 القائمة الزرقاء: زودنا overflow-y عشان لو اللينكات كتيرة تسكرول وما تختفيش */
-    nav ul {
-        
-    }
+        nav ul {
+    position: fixed !important;
+    top: 60px !important;
+    right: -100% !important;
+    width: 50% !important;
+    height: auto !important;
+    background-color: white !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important; /* يضمن بدء العناصر من الأعلى مباشرة */
+    gap: 15px !important; /* تقليل المسافة بين العناصر وتثبيتها بشكل أنيق */
+    padding: 20px 15px !important; /* مسافة داخلية متناسقة للـ الحواف */
+    margin: 0 !important;
+    list-style: none !important;
+    z-index: 998 !important;
+    transition: right 0.4s ease-in-out !important;
+    overflow-y: auto !important; /* يضمن تفعيل السكرول إذا كان الهاتف صغيراً جداً دون اختفاء (خدماتنا) */
+        }
 
     nav ul li {
         width: 100% !important;
